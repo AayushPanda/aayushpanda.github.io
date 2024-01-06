@@ -19,5 +19,13 @@
     font-family: 'Chivo Mono', monospace;
 }
 
+a {
+    color: var(--hl);
+}
+
+p {
+    width:50%;
+    margin:0 auto;
+}
 
 body {background-color: var(--bg)}
