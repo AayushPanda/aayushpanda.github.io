@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+:root {
+    @media (prefers-color-scheme: dark) {
+        --fg: white;
+        --bg: black;
+        --hl: #2a82ea;
+        --shadow: #b9b9b9;
+    }
+    @media (prefers-color-scheme: light) {
+        --fg: black;
+        --bg: white;
+        --hl: #2063e0;
+        --shadow: #595858;
+    }
+}
+
+* {
+    font-family: 'Chivo Mono', monospace;
+}
+
+
+body {background-color: var(--bg)}
