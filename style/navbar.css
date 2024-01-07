@@ -196,7 +196,7 @@
     left: 0;
     background-color: var(--fg);
     transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
+    transition: transform 0.3s ease-out;
 }
 
 .menu-items > li:hover::after {

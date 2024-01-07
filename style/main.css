@@ -5,28 +5,46 @@
         --fg: white;
         --bg: black;
         --hl: #2a82ea;
-        --shadow: #b9b9b9;
+        --shadow: #6c6b6b;
+        --dshadow: #1f1f1f;
     }
     @media (prefers-color-scheme: light) {
         --fg: black;
         --bg: white;
         --hl: #2063e0;
-        --shadow: #595858;
+        --shadow: #a4a4a4;
+        --dshadow: #d2d0d0;
     }
 }
 
 * {
     font-family: 'Chivo Mono', monospace;
+    font-size: large;
+    border-radius: 5px;
 }
 
 a {
     color: var(--hl);
 }
 
-p {
+.content {
     width:50%;
     margin:0 auto;
+    padding: 150px 5px 5px 5px;
+    display: block;
+}
+
+p {
     color: var(--fg);
+    justify-self: left;
+    padding: 5px 5px 5px 5px;
+}
+
+.snippet  {
+    white-space: pre;
+    overflow: auto;
+    background-color: var(--dshadow);
+    width: fit-content;
 }
 
 .centered{
