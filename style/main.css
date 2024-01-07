@@ -29,8 +29,7 @@ p {
     color: var(--fg);
 }
 
-.centered {
-    /*margin: 0;*/
+.centered{
     position: absolute;
     top: 50%;
     left: 50%;
