@@ -22,7 +22,8 @@
 }
 
 .navbar{
-    position: page;
+    position: fixed;
+    top: 0;
     padding-top: 15px   ;
     width: 100%;
     background: var(--bg);

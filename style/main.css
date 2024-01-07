@@ -26,6 +26,17 @@ a {
 p {
     width:50%;
     margin:0 auto;
+    color: var(--fg);
+}
+
+.centered {
+    /*margin: 0;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    display: flex;
 }
 
 body {background-color: var(--bg)}
