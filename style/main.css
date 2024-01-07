@@ -28,12 +28,20 @@ a {
 }
 
 .content {
-    width:50%;
+    width:80%;
     margin:0 auto;
-    padding: 150px 5px 5px 5px;
+    padding: 150px 0px 5px 0px;
     display: block;
 }
 
+@media (max-width: 768px) {
+    .content {
+        width:90%;
+        margin:0 auto;
+        padding: 150px 5px 5px 5px;
+        display: block;
+    }
+}
 p {
     color: var(--fg);
     justify-self: left;
@@ -42,9 +50,11 @@ p {
 
 .snippet  {
     white-space: pre;
-    overflow: auto;
-    background-color: var(--dshadow);
+    padding: 5px 5px 5px 5px;
     width: fit-content;
+    overflow-x: auto;
+    background-color: var(--dshadow);
+    max-width: 100%;
 }
 
 .centered{
