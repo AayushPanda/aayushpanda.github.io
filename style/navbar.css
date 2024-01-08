@@ -186,7 +186,7 @@
     color: var(--shadow);
 }
 
-.menu-items li a:not(.aerial-mode)::after:not(.aerial){
+.menu-items li a:not(.aerial-mode):not(.aerial)::after{
     content: '';
     position: absolute;
     width: 100%;
@@ -199,12 +199,12 @@
     transition: transform 0.3s ease-out;
 }
 
-.menu-items li a:not(.aerial-mode):hover::after:not(.aerial){
+.menu-items li a:not(.aerial-mode):not(.aerial):hover::after{
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
-.menu-items li a:not(.aerial-mode):hover:not(.aerial){
+.menu-items li a:not(.aerial-mode):not(.aerial):hover{
     color: var(--fg);
 }
 
@@ -215,7 +215,7 @@
     border:1px solid var(--fg)
 }
 
-.menu-items > li a.aerial-mode:hover:not(.aerial){
+.menu-items > li a.aerial-mode:not(.aerial):hover{
     background-color: var(--shadow);
     transition: 0.3s ease-in-out;
 }
