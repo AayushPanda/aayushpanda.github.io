@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
-:root {
-    @media (prefers-color-scheme: dark) {
+:root{
+    @media (prefers-color-scheme: dark){
         --fg: white;
         --bg: black;
         --hl: #2a82ea;
         --shadow: #6c6b6b;
         --dshadow: #1f1f1f;
     }
-    @media (prefers-color-scheme: light) {
+    @media (prefers-color-scheme: light){
         --fg: black;
         --bg: white;
         --hl: #2063e0;
@@ -17,38 +17,42 @@
     }
 }
 
-* {
+*:not(.aerial){
     font-family: 'Chivo Mono', monospace;
     font-size: large;
     border-radius: 5px;
 }
 
-a {
+a:not(.aerial){
     color: var(--hl);
 }
 
-.content {
+.content:not(.aerial){
     width:80%;
     margin:0 auto;
     padding: 150px 0px 5px 0px;
     display: block;
 }
 
-@media (max-width: 768px) {
-    .content {
+@media (max-width: 768px){
+    .content:not(.aerial){
         width:90%;
         margin:0 auto;
         padding: 150px 5px 5px 5px;
         display: block;
     }
+
+    .obi:not(.aerial){
+        font-size: small;
+    }
 }
-p {
+p:not(.aerial){
     color: var(--fg);
     justify-self: left;
     padding: 5px 5px 5px 5px;
 }
 
-.snippet  {
+.snippet:not(.aerial){
     white-space: pre;
     padding: 5px 5px 5px 5px;
     width: fit-content;
@@ -57,7 +61,7 @@ p {
     max-width: 100%;
 }
 
-.centered{
+.centered:not(.aerial){
     position: absolute;
     top: 50%;
     left: 50%;
@@ -66,4 +70,4 @@ p {
     display: flex;
 }
 
-body {background-color: var(--bg)}
+body:not(.aerial){background-color: var(--bg)}

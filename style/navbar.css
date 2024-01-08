@@ -10,18 +10,18 @@
     font-size: 62.5%;
 }
 
-.navbar input[type="checkbox"],
-.navbar .hamburger-lines{
+.navbar input,
+.navbar .hamburger-lines:not(.aerial){
     display: none;
 }
 
-.container{
+.container:not(.aerial){
     max-width: 80%;
     width: 90%;
     margin: auto;
 }
 
-.navbar{
+.navbar:not(.aerial){
     position: fixed;
     top: 0;
     padding-top: 15px   ;
@@ -32,56 +32,56 @@
     z-index: 100;
 }
 
-.navbar-container{
+.navbar-container:not(.aerial){
     display: flex;
     justify-content: space-between;
     height: 64px;
     align-items: center;
 }
 
-.menu-items{
+.menu-items:not(.aerial){
     order: 2;
     display: flex;
 }
-.logo{
+.logo:not(.aerial){
     order: 1;
     font-size: 2.3rem;
 }
 
-.menu-items li{
+.menu-items li:not(.aerial){
     list-style: none;
     margin-left: 1.5rem;
     font-size: 1.3rem;
 }
 
-.navbar a{
+.navbar a:not(.aerial){
     color: var(--shadow);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease-in-out;
 }
 
-.navbar a:hover{
+.navbar a:hover:not(.aerial){
     color: var(--fg);
 }
 
 @media (max-width: 768px){
-    .navbar{
+    .navbar:not(.aerial){
         opacity: 0.95;
     }
 
     .navbar-container input[type="checkbox"],
-    .navbar-container .hamburger-lines{
+    .navbar-container .hamburger-lines:not(.aerial){
         display: block;
     }
 
-    .navbar-container{
+    .navbar-container:not(.aerial){
         display: block;
         position: relative;
         height: 64px;
     }
 
-    .navbar-container input[type="checkbox"]{
+    .navbar-container input[type="checkbox"]:not(.aerial){
         position: absolute;
         display: block;
         height: 32px;
@@ -93,7 +93,7 @@
         cursor: pointer;
     }
 
-    .navbar-container .hamburger-lines{
+    .navbar-container .hamburger-lines:not(.aerial){
         display: block;
         height: 28px;
         width: 35px;
@@ -106,7 +106,7 @@
         justify-content: space-between;
     }
 
-    .navbar-container .hamburger-lines .line{
+    .navbar-container .hamburger-lines .line:not(.aerial){
         display: block;
         height: 4px;
         width: 100%;
@@ -114,21 +114,21 @@
         background: #333;
     }
 
-    .navbar-container .hamburger-lines .line1{
+    .navbar-container .hamburger-lines .line1:not(.aerial){
         transform-origin: 0% 0%;
         transition: transform 0.3s ease-in-out;
     }
 
-    .navbar-container .hamburger-lines .line2{
+    .navbar-container .hamburger-lines .line2:not(.aerial){
         transition: transform 0.2s ease-in-out;
     }
 
-    .navbar-container .hamburger-lines .line3{
+    .navbar-container .hamburger-lines .line3:not(.aerial){
         transform-origin: 0% 100%;
         transition: transform 0.3s ease-in-out;
     }
 
-    .navbar .menu-items{
+    .navbar .menu-items:not(.aerial){
         padding-top: 100px;
         background: var(--bg);
         height: 100vh;
@@ -143,50 +143,50 @@
         overflow: scroll;
     }
 
-    .navbar .menu-items li{
+    .navbar .menu-items li:not(.aerial){
         margin-bottom: 1.8rem;
         font-size: 1.1rem;
         font-weight: 500;
     }
 
-    .logo{
+    .logo:not(.aerial){
         position: absolute;
         top: 10px;
         right: 15px;
         font-size: 2.5rem;
     }
 
-    .navbar-container input[type="checkbox"]:checked ~ .menu-items{
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items:not(.aerial){
         transform: translateX(0);
     }
 
-    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1{
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1:not(.aerial){
         transform: rotate(45deg);
     }
 
-    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2{
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2:not(.aerial){
         transform: scaleY(0);
     }
 
-    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3{
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3:not(.aerial){
         transform: rotate(-45deg);
     }
 
 }
 
 @media (max-width: 500px){
-    .navbar-container input[type="checkbox"]:checked ~ .logo{
+    .navbar-container input[type="checkbox"]:checked ~ .logo:not(.aerial){
         display: none;
     }
 }
 
-.menu-items > li {
+.menu-items li a:not(.aerial-mode):not(.aerial){
     display: inline-block;
     position: relative;
-    color: var(--fg);
+    color: var(--shadow);
 }
 
-.menu-items > li::after {
+.menu-items li a:not(.aerial-mode)::after:not(.aerial){
     content: '';
     position: absolute;
     width: 100%;
@@ -199,7 +199,23 @@
     transition: transform 0.3s ease-out;
 }
 
-.menu-items > li:hover::after {
+.menu-items li a:not(.aerial-mode):hover::after:not(.aerial){
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+.menu-items li a:not(.aerial-mode):hover:not(.aerial){
+    color: var(--fg);
+}
+
+.menu-items > li a.aerial-mode:not(.aerial){
+    color: var(--fg);
+    padding: 8px 8px 8px 8px;
+    transition: 0.3s ease-in-out;
+    border:1px solid var(--fg)
+}
+
+.menu-items > li a.aerial-mode:hover:not(.aerial){
+    background-color: var(--shadow);
+    transition: 0.3s ease-in-out;
 }

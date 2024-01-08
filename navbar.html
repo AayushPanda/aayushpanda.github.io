@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chivo">
+<style>html{visibility: hidden;opacity:0;}</style>
 <link rel="stylesheet" href="style/main.css">
 <link rel="stylesheet" href="style/navbar.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -6,14 +7,51 @@
 <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
 <!-- Load the element definition -->
 <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
-
 <script>
+
     function setPageTitleIndicator(){
         var title = document.getElementsByTagName("title")[0].innerHTML;
         document.getElementById("title").innerHTML = title.substring(15);
     }
+
+    if(localStorage.getItem("aerial-mode")===null){
+        localStorage.setItem('aerial-mode', "false");
+    }
+    console.log("Init value: " + localStorage.getItem("aerial-mode"))
+
     setPageTitleIndicator();
+
+    document.getElementById("aerial-mode").addEventListener("click", aerialModeToggle);
+
+    function aerialModeToggle(){
+        var aerialMode = localStorage.getItem("aerial-mode")==="true";
+        localStorage.setItem("aerial-mode", (!aerialMode).toString());
+        aerialMode = !aerialMode
+        console.log(aerialMode);
+        runAerialMode(aerialMode);
+    }
+
+    function runAerialMode(enable){
+        var els = document.getElementsByTagName("*");
+        for(var i = 0, all = els.length; i < all; i++){
+            if(enable){
+                els[i].classList.add("aerial");
+            } else {
+                els[i].classList.remove("aerial")
+            }
+        }
+    }
+
+    var aerialMode = localStorage.getItem("aerial-mode")==="true";
+
+    setTimeout(function(){
+        runAerialMode(aerialMode)
+    },5); //delay is in milliseconds
+
+    // Replace 'path/to/your/styles.css' with the actual path to your CSS file
 </script>
+<style>html{visibility: visible;opacity:1;}</style>
+
 
 <nav class="navbar" style="margin-bottom: 100px">
     <div class="navbar-container container">
@@ -28,7 +66,9 @@
             <li><a href="./about.html">About</a></li>
             <li><a href="./writing.html">Writing</a></li>
             <li><a href="./contact.html">Contact</a></li>
+            <li><a href="#" class="aerial-mode" id="aerial-mode">Aerial Mode</a></li>
         </ul>
         <h1 id="title" class="logo">error</h1>
     </div>
 </nav>
+
