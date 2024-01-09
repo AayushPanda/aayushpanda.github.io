@@ -17,14 +17,29 @@
     }
 }
 
+body:not(.aerial){background-color: var(--bg)}
+
+h1:not(.aerial) {
+    font-size: xx-large;
+}
+
+div:not(.aerial) {
+    font-size: large;
+}
+
+.big-text:not(.aerial) {
+    font-size: xxx-large;
+}
+
 *:not(.aerial){
     font-family: 'Chivo Mono', monospace;
-    font-size: large;
     border-radius: 5px;
+    color: var(--fg);
 }
 
 a:not(.aerial){
     color: var(--hl);
+    font-size: large;
 }
 
 .content:not(.aerial){
@@ -34,7 +49,7 @@ a:not(.aerial){
     display: block;
 }
 
-@media (max-width: 768px){
+@media (max-width: 775px){
     .content:not(.aerial){
         width:90%;
         margin:0 auto;
@@ -47,7 +62,6 @@ a:not(.aerial){
     }
 }
 p:not(.aerial){
-    color: var(--fg);
     justify-self: left;
     padding: 5px 5px 5px 5px;
 }
@@ -70,4 +84,3 @@ p:not(.aerial){
     display: flex;
 }
 
-body:not(.aerial){background-color: var(--bg)}

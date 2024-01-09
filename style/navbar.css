@@ -65,7 +65,7 @@
     color: var(--fg);
 }
 
-@media (max-width: 768px){
+@media (max-width: 775px){
     .navbar:not(.aerial){
         opacity: 0.95;
     }
