@@ -63,7 +63,6 @@ a:not(.aerial){
 }
 p:not(.aerial){
     justify-self: left;
-    padding: 5px 5px 5px 5px;
 }
 
 .snippet:not(.aerial){
