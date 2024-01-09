@@ -84,3 +84,7 @@ p:not(.aerial){
     display: flex;
 }
 
+html {
+    visibility: visible;
+    opacity: 1;
+}
