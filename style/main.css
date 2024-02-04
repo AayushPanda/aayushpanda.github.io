@@ -45,7 +45,7 @@ a:not(.aerial){
 .content:not(.aerial){
     width:80%;
     margin:0 auto;
-    padding: 150px 0px 5px 0px;
+    padding: 230px 0px 5px 0px;
     display: block;
 }
 
@@ -81,6 +81,27 @@ p:not(.aerial){
     transform: translate(-50%, -50%);
     justify-content: center;
     display: flex;
+}
+
+a:not(.aerial){
+    color: var(--shadow);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover:not(.aerial){
+    color: var(--fg);
+}
+
+body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.footer{
+    width: 100%;
 }
 
 html {
