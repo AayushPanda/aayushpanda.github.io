@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
-:root{
-    @media (prefers-color-scheme: dark){
+:root {
+    @media (prefers-color-scheme: dark) {
         --fg: white;
         --bg: black;
         --hl: #2a82ea;
         --shadow: #6c6b6b;
         --dshadow: #1f1f1f;
     }
-    @media (prefers-color-scheme: light){
+    @media (prefers-color-scheme: light) {
         --fg: black;
         --bg: white;
         --hl: #2063e0;
@@ -17,94 +17,136 @@
     }
 }
 
-body:not(.aerial){background-color: var(--bg)}
+body:not(.aerial) {
+    background-color: var(--bg);
+    margin: 0;
+    font-family: 'Chivo Mono', monospace;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
 
 h1:not(.aerial) {
-    font-size: xx-large;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 div:not(.aerial) {
-    font-size: large;
+    font-size: clamp(1rem, 3vw, 1.25rem);
 }
 
 .big-text:not(.aerial) {
-    font-size: xxx-large;
+    font-size: clamp(2rem, 6vw, 3rem);
 }
 
-*:not(.aerial){
+*:not(.aerial) {
     font-family: 'Chivo Mono', monospace;
     border-radius: 5px;
     color: var(--fg);
+    box-sizing: border-box;
 }
 
-a:not(.aerial){
+a:not(.aerial) {
     color: var(--hl);
     font-size: large;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
 }
 
-.content:not(.aerial){
-    width:80%;
-    margin:0 auto;
-    padding: 230px 0px 5px 0px;
+a:hover:not(.aerial) {
+    color: var(--fg);
+}
+
+.content:not(.aerial) {
+    width: 80%;
+    margin: 0 auto;
+    padding: 12rem 0 1rem;
     display: block;
+    position: relative;
+    z-index: 1;
 }
 
-@media (max-width: 775px){
-    .content:not(.aerial){
-        width:90%;
-        margin:0 auto;
-        padding: 150px 5px 5px 5px;
-        display: block;
+@media (max-width: 775px) {
+    .content:not(.aerial) {
+        width: 90%;
+        padding: 12rem 1rem 1rem;
     }
 
-    .obi:not(.aerial){
+    .obi:not(.aerial) {
         font-size: small;
     }
 }
-p:not(.aerial){
+
+p:not(.aerial) {
     justify-self: left;
+    line-height: 1.5;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
 }
 
-.snippet:not(.aerial){
-    white-space: pre;
-    padding: 5px 5px 5px 5px;
-    width: fit-content;
-    overflow-x: auto;
+.snippet:not(.aerial) {
+    white-space: pre-wrap;
+    padding: 0.5rem;
     background-color: var(--dshadow);
     max-width: 100%;
+    overflow-x: auto;
+    border-radius: 4px;
 }
 
-.centered:not(.aerial){
+.centered:not(.aerial) {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     justify-content: center;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-a:not(.aerial){
-    color: var(--shadow);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease-in-out;
-}
-
-a:hover:not(.aerial){
-    color: var(--fg);
-}
-
-body{
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-}
-
-.footer{
+.footer {
     width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    background-color: var(--bg);
+    color: var(--fg);
+    position: relative;
+    z-index: 1;
 }
 
 html {
     visibility: visible;
     opacity: 1;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: var(--bg);
+    padding: 1rem;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+@media (max-width: 575px) {
+    h1:not(.aerial) {
+        font-size: 1.5rem;
+    }
+
+    div:not(.aerial), 
+    p:not(.aerial), 
+    a:not(.aerial) {
+        font-size: 1rem;
+    }
+
+    .big-text:not(.aerial) {
+        font-size: 2rem;
+    }
+}
+
+body > header + .content {
+    margin-top: 3rem; /* Adjust this value based on the height of your navbar */
+}
+
+body > .content + .footer {
+    margin-bottom: 3rem; /* Adjust this value based on the footer's height */
 }
