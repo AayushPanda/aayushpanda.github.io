@@ -117,6 +117,10 @@ p {
     z-index: 1;
 }
 
+.footer-container{
+    justify-content: center;
+}
+
 html {
     visibility: visible;
     opacity: 1;
