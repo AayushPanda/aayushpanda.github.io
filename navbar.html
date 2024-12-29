@@ -11,39 +11,7 @@
         document.getElementById("title").innerHTML = title.substring(15);
     }
 
-    if(localStorage.getItem("aerial-mode")===null){
-        localStorage.setItem('aerial-mode', "false");
-    }
-    console.log("Init value: " + localStorage.getItem("aerial-mode"))
-
     setPageTitleIndicator();
-
-    document.getElementById("aerial-mode").addEventListener("click", aerialModeToggle);
-
-    function aerialModeToggle(){
-        var aerialMode = localStorage.getItem("aerial-mode")==="true";
-        localStorage.setItem("aerial-mode", (!aerialMode).toString());
-        aerialMode = !aerialMode
-        console.log(aerialMode);
-        runAerialMode(aerialMode);
-    }
-
-    function runAerialMode(enable){
-        var els = document.getElementsByTagName("*");
-        for(var i = 0, all = els.length; i < all; i++){
-            if(enable){
-                els[i].classList.add("aerial");
-            } else {
-                els[i].classList.remove("aerial")
-            }
-        }
-    }
-
-    var aerialMode = localStorage.getItem("aerial-mode")==="true";
-
-    setTimeout(function(){
-        runAerialMode(aerialMode)
-    },5); //delay is in milliseconds
 </script>
 
 <nav class="navbar" style="margin-bottom: 100px">
@@ -59,7 +27,6 @@
             <li><a href="./about.html">About</a></li>
             <li><a href="./writing.html">Writing</a></li>
             <li><a href="./contact.html">Contact</a></li>
-            <li><a href="#" class="aerial-mode" id="aerial-mode">Aerial Mode</a></li>
         </ul>
         <h1 id="title" class="logo">error</h1>
     </div>
