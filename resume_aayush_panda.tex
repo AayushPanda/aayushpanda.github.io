@@ -1,0 +1,157 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[scaled=0.92]{helvet}
+\usepackage{fontawesome} % Add this for the URL icon
+\renewcommand{\familydefault}{\sfdefault}
+
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+% Modified spacing for technical skills section
+\newcommand{\skillItem}[1]{\item\small{#1 \vspace{-1pt}}}
+% Modified resumeSubheading command with reduced spacing
+\newcommand{\resumeSubheading}[4]{\vspace{-3pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\ \textit{\small#3} & \textit{\small #4} \\
+\end{tabular*}\vspace{-9pt}}
+
+% Modified project heading to include URL logo and make title a link
+\newcommand{\resumeProjectHeading}[3]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small{\faLink} \small{\href{#3}{\underline{\textbf{#1}}}} \small{| \emph{#2}} \\
+\end{tabular*}\vspace{-7pt}}
+
+% Modified to add custom spacing between items
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.25in, itemsep=1pt, parsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+% New command for tighter spacing in skills section
+\newcommand{\skillListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=-3pt]}
+\newcommand{\skillListEnd}{\end{itemize}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Aayush Panda} \\ \vspace{1pt}
+    \small \href{mailto:aayush.vinayak@gmail.com}{aayush.vinayak@gmail.com} $|$
+    \href{https://linkedin.com/in/aayush-panda}{linkedin.com/in/aayush-panda} $|$
+    \href{https://github.com/AayushPanda}{github.com/AayushPanda}
+\end{center}
+
+\section{Technical Skills}
+\skillListStart
+    \skillItem{\textbf{Programming Languages:} C++, C, Python, Java, TypeScript, SQL, Haskell, Scheme, Bash}
+    \skillItem{\textbf{Frameworks:} Flutter, Flask, Next.js, Firebase, Google Cloud, Android Development}
+    \skillItem{\textbf{Data Science:} Pandas, SKlearn, Torch, MatPlotLib, NumPy}
+\skillListEnd
+
+\section{Education}
+\resumeSubHeadingListStart
+    \resumeSubheading{University of Waterloo}{\textbf{GPA: } 3.92/4.00}{Bachelor of Computer Science, Honours Co-op}{Sep. 2024 -- Apr. 2029}
+%     \resumeItem{Relevant Coursework: Functional Programming, Algo Design and Data Abstraction, Data Structures and Data Management (All advanced)}
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+    \resumeSubheading{Software Engineering Intern}{Mar. 2025 -- Apr. 2025}{Toma (YC W25)}{}
+    \resumeItemListStart
+        \resumeItem{Developed a server log viewer with IDE-like features to improve debugging efficiency.}
+        \resumeItem{Used \textbf{BeautifulSoup} to scrape all ($\sim$ \textbf{20k}) US car dealerships, and wrote a service that periodically calls each with an AI voice to evaluate caller experience when trying to book appointments}
+        \resumeItem{Enhanced logic for determining Toma's own call metrics, improving data accuracy and removing some logical errors.}
+        \resumeItem{Implemented debugging APIs to facilitate analysis of content in \textbf{AWS S3} buckets}directly in Metabase dashboard
+    \resumeItemListEnd
+
+   \resumeSubheading{Founder and Co-President}{Dec. 2021 -- Jul. 2024}{hack::peel}{}
+    \resumeItemListStart
+    \resumeItem{Founded and led, an annual Peel-region hackathon attracting \textbf{100+ high school participants} each year}
+    \resumeItem{Secured over \textbf{\$20,000+} in sponsorships annually, enabling high-value prizes and industry support}
+    \resumeItem{Directed a team of 25 across 7 subteams to coordinate logistics, outreach, sponsorships, and event programming}
+    \resumeItemListEnd
+
+
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+
+    \resumeProjectHeading{Semantify}{Python, React, FastAPI, Sentence Transformers, UMAP, Ollama}{https://github.com/AayushPanda/semantify}
+    \resumeItemListStart
+        \resumeItem{Built a document organization system that semantically clusters \textbf{1000+ files} into a directory structure in minutes using embedding models and custom hierarchical clustering algorithms}
+        \resumeItem{Developed an interactive graph visualization of document embeddings to allow intuitive semantic exploration}
+        \resumeItem{Implemented a RAG-powered chat interface to intelligently query uploaded documents with source citation}
+        \resumeItem{Reduced processing time by \textbf{$\sim$ 66\%} through efficient batching and async processing}
+        \resumeItem{Reduced organised directory depth by an exponential factor using a tree merging algorithm}
+    \resumeItemListEnd
+
+    \resumeProjectHeading{Phased Array SONAR}{C++, Python, Xtensa LX6 microprocessor, AVR RISC processors}{https://github.com/AayushPanda/phased-array-sonar}
+    \resumeItemListStart
+        \resumeItem{Engineered a sub-degree precision beam-steering phased SONAR array with real-time radar-style display on oscilloscopes.}
+        \resumeItem{Designed a waveguide to reduce inter-element pitch and suppress grating lobes, enhancing beam directivity.}
+        \resumeItem{Built a phased array simulator suite to visualize beamforming, steering, and focus behaviors in 2D.}
+    \resumeItemListEnd
+
+    \resumeProjectHeading{DAO Based Crypto Token Mutual Fund}{Smart Contracts, Axelar, 0Squid, Node.js, Next.js}{https://github.com/ikesicle/dao-it-backend}
+    \resumeItemListStart
+        \resumeItem{Won \textbf{2 $1^{st}$ place sponsor prizes} worth \textbf{\$3000} for best Web3 app at Hack the North 2022 (out of \textbf{829} participants})
+        \resumeItem{Used Smart Contracts with \textbf{Axelar} for cross-chain transactions and \textbf{0Squid} for token conversion.}
+        \resumeItem{Integrated Web3 backend with frontend using \textbf{Node.js} and \textbf{Next.js} .}
+    \resumeItemListEnd
+
+    \resumeProjectHeading{Woodlands App}{Flutter, Firebase, Google Cloud Storage}{https://github.com/Woodlands-App-Team/WAPP}
+    \resumeItemListStart
+        \resumeItem{Developed a \textbf{Flutter} app to inform students about announcements, events, and cafeteria menu.}
+        \resumeItem{Integrated \textbf{Firebase} and \textbf{Google Cloud Storage} for authentication and data storage.}
+        \resumeItem{Achieved \textbf{400+} regular monthly users and rank \textbf{40} on the Apple App Store's top charts.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Patents}
+\skillListStart
+    \resumeItem{\textbf{CA 3119717:} Compliant mechanism for operating flight control surfaces of a remotely piloted aircraft.}
+    \resumeItem{\textbf{CA 3222437 (pending):} Device for redirection of optical beams using virtual gratings generated by stationary waves.}
+\skillListEnd
+
+\section{Awards}
+\skillListStart
+    \resumeItem{\textbf{Jane Street Estimathon @ UWaterloo (2024):} First place}
+    \resumeItem{\textbf{Hack the North 2022:} Winner}
+    \resumeItem{\textbf{PicoCTF 2022:} 2nd place in Canada, 14th (top 0.001\%) globally}
+    \resumeItem{\textbf{FIRST Innovation Challenge 2021:} Semifinalist}
+\skillListEnd
+
+
+\end{document}
