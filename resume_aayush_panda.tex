@@ -26,8 +26,8 @@
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{2in}
 
 \urlstyle{same}
 
@@ -36,7 +36,7 @@
 \setlength{\tabcolsep}{0in}
 
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+  \vspace{-10pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 \pdfgentounicode=1
@@ -76,7 +76,7 @@
 \skillListStart
     \skillItem{\textbf{Programming Languages:} C++, C, Python, Java, TypeScript, SQL, Haskell, Scheme, Bash}
     \skillItem{\textbf{Frameworks:} Flutter, Flask, Next.js, Firebase, Google Cloud, Android Development}
-    \skillItem{\textbf{Data Science:} Pandas, SKlearn, Torch, MatPlotLib, NumPy}
+    \skillItem{\textbf{Data Science/ML:} Pandas, SKlearn, Torch, Tensorflow, Keras, MatPlotLib, NumPy}
 \skillListEnd
 
 \section{Education}
@@ -87,11 +87,18 @@
 
 \section{Experience}
 \resumeSubHeadingListStart
+    \resumeSubheading{Research Assistant}{Apr. 2025 -- Present}{Multi-Sensory Brain and Cognition (MBC) lab @ UWaterloo}{}
+    \resumeItemListStart
+        \resumeItem{Working on research on eye movement in batters with relation to incident baseballs}
+        \resumeItem{Developed CV pipeline that takes in eye tracking data and helmet-mounted video recordings, and produces data about how the eye tracks baseball through saccades and jumps.}
+    \resumeItemListEnd
+
+
     \resumeSubheading{Software Engineering Intern}{Mar. 2025 -- Apr. 2025}{Toma (YC W25)}{}
     \resumeItemListStart
-        \resumeItem{Developed a server log viewer with IDE-like features to improve debugging efficiency.}
-        \resumeItem{Used \textbf{BeautifulSoup} to scrape all ($\sim$ \textbf{20k}) US car dealerships, and wrote a service that periodically calls each with an AI voice to evaluate caller experience when trying to book appointments}
+        \resumeItem{Used \textbf{BeautifulSoup} to scrape all ($\sim$ \textbf{20k}) US car dealerships, and wrote a service that periodically calls each with an AI voice to evaluate caller experience. This data was then used to find ideal clients, and demonstrate/evaluate Toma's impact.}
         \resumeItem{Enhanced logic for determining Toma's own call metrics, improving data accuracy and removing some logical errors.}
+        \resumeItem{Developed a server log viewer with IDE-like features to improve debugging efficiency.}
         \resumeItem{Implemented debugging APIs to facilitate analysis of content in \textbf{AWS S3} buckets}directly in Metabase dashboard
     \resumeItemListEnd
 
@@ -110,11 +117,10 @@
 
     \resumeProjectHeading{Semantify}{Python, React, FastAPI, Sentence Transformers, UMAP, Ollama}{https://github.com/AayushPanda/semantify}
     \resumeItemListStart
-        \resumeItem{Built a document organization system that semantically clusters \textbf{1000+ files} into a directory structure in minutes using embedding models and custom hierarchical clustering algorithms}
+        \resumeItem{Built a document organization system that semantically clusters \textbf{1000+ files} into a directory structure in minutes using embedding models and custom hierarchical clustering and subtree merging algorithms}
         \resumeItem{Developed an interactive graph visualization of document embeddings to allow intuitive semantic exploration}
         \resumeItem{Implemented a RAG-powered chat interface to intelligently query uploaded documents with source citation}
         \resumeItem{Reduced processing time by \textbf{$\sim$ 66\%} through efficient batching and async processing}
-        \resumeItem{Reduced organised directory depth by an exponential factor using a tree merging algorithm}
     \resumeItemListEnd
 
     \resumeProjectHeading{Phased Array SONAR}{C++, Python, Xtensa LX6 microprocessor, AVR RISC processors}{https://github.com/AayushPanda/phased-array-sonar}
