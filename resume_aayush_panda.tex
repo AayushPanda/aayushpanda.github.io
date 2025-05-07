@@ -76,7 +76,7 @@
 \skillListStart
     \skillItem{\textbf{Programming Languages:} C++, C, Python, Java, TypeScript, SQL, Haskell, Scheme, Bash}
     \skillItem{\textbf{Frameworks:} Flutter, Flask, Next.js, Firebase, Google Cloud, Android Development}
-    \skillItem{\textbf{Data Science/ML:} Pandas, SKlearn, Torch, Tensorflow, Keras, MatPlotLib, NumPy}
+    \skillItem{\textbf{Data Science/ML:} Pandas, SKlearn, Torch, Tensorflow, Keras, MatPlotLib, NumPy, OpenCV}
 \skillListEnd
 
 \section{Education}
@@ -87,17 +87,27 @@
 
 \section{Experience}
 \resumeSubHeadingListStart
-    \resumeSubheading{Research Assistant}{Apr. 2025 -- Present}{Multi-Sensory Brain and Cognition (MBC) lab @ UWaterloo}{}
+%     \resumeSubheading{Research Assistant}{Apr. 2025 -- Present}{Multi-Sensory Brain and Cognition (MBC) lab @ UWaterloo}{}
+%     \resumeItemListStart
+%         \resumeItem{Working on research on eye movement in batters with relation to incident baseballs}
+%         \resumeItem{Developed CV pipeline that takes in eye tracking data and helmet-mounted video recordings, and produces data about how the eye tracks baseball through saccades and jumps.}
+%     \resumeItemListEnd
+
+    \resumeSubheading{Undergraduate Research Assistant}{Apr. 2025 -- Present}{University of Waterloo}{}
     \resumeItemListStart
-        \resumeItem{Working on research on eye movement in batters with relation to incident baseballs}
-        \resumeItem{Developed CV pipeline that takes in eye tracking data and helmet-mounted video recordings, and produces data about how the eye tracks baseball through saccades and jumps.}
+        \resumeItem{Research on private record linkage protocols using locality sensitive hashing, supervised by Dr. Florian Kerschbaum}
+        \resumeItem{Developing a linear regression model to predict LSH bin sizes, to allow for private frequency smoothing without sharing bin size info between parties}
     \resumeItemListEnd
 
+    \resumeSubheading{Laboratory Assistant}{Apr. 2025 -- Present}{University of Waterloo Multi-Sensory Brain and Cognition Lab (MBC)}{}
+    \resumeItemListStart
+        \resumeItem{Developed CV pipelines and algorithms for baseball/eye tracking for an ongoing research project on how batsmen's eyes track baseballs through various jumps and saccades}
+        \resumeItem{Developed correspondence algorithm to synchronise data from high speed head mounted camera and eye tracking data}
+    \resumeItemListEnd
 
     \resumeSubheading{Software Engineering Intern}{Mar. 2025 -- Apr. 2025}{Toma (YC W25)}{}
     \resumeItemListStart
         \resumeItem{Used \textbf{BeautifulSoup} to scrape all ($\sim$ \textbf{20k}) US car dealerships, and wrote a service that periodically calls each with an AI voice to evaluate caller experience. This data was then used to find ideal clients, and demonstrate/evaluate Toma's impact.}
-        \resumeItem{Enhanced logic for determining Toma's own call metrics, improving data accuracy and removing some logical errors.}
         \resumeItem{Developed a server log viewer with IDE-like features to improve debugging efficiency.}
         \resumeItem{Implemented debugging APIs to facilitate analysis of content in \textbf{AWS S3} buckets}directly in Metabase dashboard
     \resumeItemListEnd
@@ -117,10 +127,9 @@
 
     \resumeProjectHeading{Semantify}{Python, React, FastAPI, Sentence Transformers, UMAP, Ollama}{https://github.com/AayushPanda/semantify}
     \resumeItemListStart
-        \resumeItem{Built a document organization system that semantically clusters \textbf{1000+ files} into a directory structure in minutes using embedding models and custom hierarchical clustering and subtree merging algorithms}
-        \resumeItem{Developed an interactive graph visualization of document embeddings to allow intuitive semantic exploration}
+        \resumeItem{Built a system that semantically organises \textbf{1000+ files} into a directory structure in minutes using embedding models and custom hierarchical clustering and subtree merging algorithms}
+        \resumeItem{Developed an interactive visualization of document embeddings to allow intuitive semantic exploration}
         \resumeItem{Implemented a RAG-powered chat interface to intelligently query uploaded documents with source citation}
-        \resumeItem{Reduced processing time by \textbf{$\sim$ 66\%} through efficient batching and async processing}
     \resumeItemListEnd
 
     \resumeProjectHeading{Phased Array SONAR}{C++, Python, Xtensa LX6 microprocessor, AVR RISC processors}{https://github.com/AayushPanda/phased-array-sonar}
@@ -128,13 +137,6 @@
         \resumeItem{Engineered a sub-degree precision beam-steering phased SONAR array with real-time radar-style display on oscilloscopes.}
         \resumeItem{Designed a waveguide to reduce inter-element pitch and suppress grating lobes, enhancing beam directivity.}
         \resumeItem{Built a phased array simulator suite to visualize beamforming, steering, and focus behaviors in 2D.}
-    \resumeItemListEnd
-
-    \resumeProjectHeading{DAO Based Crypto Token Mutual Fund}{Smart Contracts, Axelar, 0Squid, Node.js, Next.js}{https://github.com/ikesicle/dao-it-backend}
-    \resumeItemListStart
-        \resumeItem{Won \textbf{2 $1^{st}$ place sponsor prizes} worth \textbf{\$3000} for best Web3 app at Hack the North 2022 (out of \textbf{829} participants})
-        \resumeItem{Used Smart Contracts with \textbf{Axelar} for cross-chain transactions and \textbf{0Squid} for token conversion.}
-        \resumeItem{Integrated Web3 backend with frontend using \textbf{Node.js} and \textbf{Next.js} .}
     \resumeItemListEnd
 
     \resumeProjectHeading{Woodlands App}{Flutter, Firebase, Google Cloud Storage}{https://github.com/Woodlands-App-Team/WAPP}
@@ -154,7 +156,7 @@
 \section{Awards}
 \skillListStart
     \resumeItem{\textbf{Jane Street Estimathon @ UWaterloo (2024):} First place}
-    \resumeItem{\textbf{Hack the North 2022:} Winner}
+    \resumeItem{\textbf{Hack the North 2022:} Winner (out of 829 participants)}
     \resumeItem{\textbf{PicoCTF 2022:} 2nd place in Canada, 14th (top 0.001\%) globally}
     \resumeItem{\textbf{FIRST Innovation Challenge 2021:} Semifinalist}
 \skillListEnd
