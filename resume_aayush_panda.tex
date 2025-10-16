@@ -74,9 +74,11 @@
 
 \section{Technical Skills}
 \skillListStart
-    \skillItem{\textbf{Programming Languages:} C++, C, Python, Java, TypeScript, SQL, Haskell, Scheme, Bash}
-    \skillItem{\textbf{Frameworks:} Flutter, Flask, Next.js, Firebase, Google Cloud, Android Development}
-    \skillItem{\textbf{Data Science/ML:} Pandas, SKlearn, Torch, Tensorflow, Keras, MatPlotLib, NumPy, OpenCV}
+    \skillItem{\textbf{Programming Languages:} C, C++, Rust, Python, Java, TypeScript, SQL, Haskell, Scheme, Bash, HTML/CSS, x86 assembly}
+%     \skillItem{\textbf{Web \& Mobile Development:} Next.js, React, Flutter, Android Development, Node.js, Express, Firebase}
+%     \skillItem{\textbf{Cloud \& DevOps:} Google Cloud Platform (GCP), Docker, Git, GitHub Actions, Linux/Unix Environments}
+    \skillItem{\textbf{Data Science \& Machine Learning:} NumPy, Pandas, sklearn, PyTorch, TensorFlow, Keras, OpenCV, Matplotlib, Seaborn, Jupyter}
+    \skillItem{\textbf{Databases:} SQL dbs, Firestore, Neo4J, Chroma}
 \skillListEnd
 
 \section{Education}
@@ -84,47 +86,45 @@
     \resumeSubheading{University of Waterloo}{\textbf{GPA: } 3.92/4.00}{Bachelor of Computer Science, Honours Co-op}{Sep. 2024 -- Apr. 2029}
 %     \resumeItem{Relevant Coursework: Functional Programming, Algo Design and Data Abstraction, Data Structures and Data Management (All advanced)}
 \resumeSubHeadingListEnd
-
 \section{Experience}
 \resumeSubHeadingListStart
-%     \resumeSubheading{Research Assistant}{Apr. 2025 -- Present}{Multi-Sensory Brain and Cognition (MBC) lab @ UWaterloo}{}
-%     \resumeItemListStart
-%         \resumeItem{Working on research on eye movement in batters with relation to incident baseballs}
-%         \resumeItem{Developed CV pipeline that takes in eye tracking data and helmet-mounted video recordings, and produces data about how the eye tracks baseball through saccades and jumps.}
-%     \resumeItemListEnd
 
-    \resumeSubheading{Undergraduate Research Assistant}{Apr. 2025 -- Present}{University of Waterloo}{}
+    \resumeSubheading{ML \& NLP Engineer}{Sep. 2025 -- Present}{Huawei Canada}{}
     \resumeItemListStart
-        \resumeItem{Research on private record linkage protocols using locality sensitive hashing, supervised by Dr. Florian Kerschbaum}
-        \resumeItem{Developing a differentially private method of estimating max LSH bin, to allow for private frequency smoothing without sharing bin size info between parties}
-        \resumeItem{Implemented 2-d cuckoo hashing that allows for hashtable with size bounded by size of all data being hashed.}
+        \resumeItem{Working on knowledge graph generation, named entity resolution, semantic algorithms for edit targeting for Xiaoyi Canvas (similar to ChatGPT canvas)}
     \resumeItemListEnd
 
     \resumeSubheading{Laboratory Assistant}{Apr. 2025 -- Present}{University of Waterloo Multi-Sensory Brain and Cognition Lab (MBC)}{}
     \resumeItemListStart
         \resumeItem{Developed CV pipelines and algorithms for baseball/eye tracking for an ongoing research project on how batsmen's eyes track baseballs through various jumps and saccades}
         \resumeItem{Developed correspondence algorithm to synchronise data from high speed head mounted camera and eye tracking data}
+        \resumeItem{Working on information-theoretic modeling of human visual perception}
+    \resumeItemListEnd
+
+    \resumeSubheading{Undergraduate Research Assistant}{Apr. 2025 -- Aug. 2025}{University of Waterloo}{}
+    \resumeItemListStart
+        \resumeItem{Research on private record linkage protocols using locality sensitive hashing, supervised by Dr. Florian Kerschbaum}
+        \resumeItem{Developed a differentially private method of estimating max LSH bin, to allow for private frequency smoothing without sharing bin size info between parties (which leaks information)}
+        \resumeItem{Developed k-d cuckoo hashing algorithm for private set intersection using the backing array}
     \resumeItemListEnd
 
     \resumeSubheading{Software Engineering Intern}{Mar. 2025 -- Apr. 2025}{Toma (YC W25)}{}
     \resumeItemListStart
-        \resumeItem{Used \textbf{BeautifulSoup} to scrape all ($\sim$ \textbf{20k}) US car dealerships, and wrote a service that periodically calls each with an AI voice to evaluate caller experience. This data was then used to find ideal clients, and demonstrate/evaluate Toma's impact.}
+        \resumeItem{Wrote a service that evalutes dealership customer support quality using a conversational voice AI built with ElevenLabs. This data was then used to find ideal clients, and demonstrate/evaluate Toma's impact on dealerships.}
         \resumeItem{Developed a server log viewer with IDE-like features to improve debugging efficiency.}
-        \resumeItem{Implemented debugging APIs to facilitate analysis of content in \textbf{AWS S3} buckets}directly in Metabase dashboard
+        \resumeItem{Worked on model evaluation for Toma's voice agents}
     \resumeItemListEnd
-
-   \resumeSubheading{Founder and Co-President}{Dec. 2021 -- Jul. 2024}{hack::peel}{}
-    \resumeItemListStart
-    \resumeItem{Founded and led, an annual Peel-region hackathon attracting \textbf{100+ high school participants} each year}
-    \resumeItem{Secured over \textbf{\$20,000+} in sponsorships annually, enabling high-value prizes and industry support}
-    \resumeItem{Directed a team of 25 across 7 subteams to coordinate logistics, outreach, sponsorships, and event programming}
-    \resumeItemListEnd
-
 
 \resumeSubHeadingListEnd
 
+
 \section{Projects}
 \resumeSubHeadingListStart
+
+    \resumeProjectHeading{Concord}{Rust, Vulkan, HLSL}{}
+    \resumeItemListStart
+        \resumeItem{Ongoing project to build a cross-platform runtime in Rust for hardware accelerated computation, with a unified ISA and memory model for CPU/GPU operations.}
+    \resumeItemListEnd
 
     \resumeProjectHeading{Semantify}{Python, React, FastAPI, Sentence Transformers, UMAP, Ollama}{https://github.com/AayushPanda/semantify}
     \resumeItemListStart
@@ -140,18 +140,19 @@
         \resumeItem{Built a phased array simulator suite to visualize beamforming, steering, and focus behaviors in 2D.}
     \resumeItemListEnd
 
-    \resumeProjectHeading{Woodlands App}{Flutter, Firebase, Google Cloud Storage}{https://github.com/Woodlands-App-Team/WAPP}
-    \resumeItemListStart
-        \resumeItem{Developed a \textbf{Flutter} app to inform students about announcements, events, and cafeteria menu.}
-        \resumeItem{Integrated \textbf{Firebase} and \textbf{Google Cloud Storage} for authentication and data storage.}
-        \resumeItem{Achieved \textbf{400+} regular monthly users and rank \textbf{40} on the Apple App Store's top charts.}
-    \resumeItemListEnd
+%     \resumeProjectHeading{Woodlands App}{Flutter, Firebase, Google Cloud Storage}{https://github.com/Woodlands-App-Team/WAPP}
+%     \resumeItemListStart
+%         \resumeItem{Developed a \textbf{Flutter} app to inform students about announcements, events, and cafeteria menu.}
+%         \resumeItem{Integrated \textbf{Firebase} and \textbf{Google Cloud Storage} for authentication and data storage.}
+%         \resumeItem{Achieved \textbf{400+} regular monthly users and rank \textbf{40} on the Apple App Store's top charts.}
+%     \resumeItemListEnd
 \resumeSubHeadingListEnd
 
 \section{Patents}
 \skillListStart
+    \resumeItem{\textbf{CA 3222437:} Device for redirection of optical beams using virtual gratings generated by stationary waves.}
     \resumeItem{\textbf{CA 3119717:} Compliant mechanism for operating flight control surfaces of a remotely piloted aircraft.}
-    \resumeItem{\textbf{CA 3222437 (pending):} Device for redirection of optical beams using virtual gratings generated by stationary waves.}
+
 \skillListEnd
 
 \section{Awards}
