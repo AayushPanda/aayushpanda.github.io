@@ -20,17 +20,18 @@ class Point {
         this.ay += 3;   // gravity
         let dx = mousex - this.x;
         let dy = mousey - this.y;
-        let dz = 50 - this.z;
+        let dz = 0 - this.z;
         let d = Math.max(Math.hypot(dx, dy, dz), 0.5); // prevent division by 0
         
-        if (d>20) {
-            let g = 600;
-            let fx =g*dx/(d*d);
-            let fy = g*dy/(d*d);
-            let fz = g*dz/(d*d);
-            this.ax += fx;
-            this.ay +=fy;
-            this.az += fz;
+        if (d<50*this.force_mult) {
+            console.log("chat")
+            let g = 100;
+            let fx = g*dx/d;
+            let fy = g*dy/d;
+            let fz = g*dz/d;
+            this.ax -= fx;
+            this.ay -=fy;
+            this.az -= fz;
         }
 
         let vx = this.x - this.px;
@@ -132,7 +133,7 @@ class Cloth {
         const hspace = width/ncols;
         const vspace = hspace;
         console.log(vspace);
-        let k = 0.005;
+        let k = 0.005 * (31/vspace);
         let nrows = Math.floor(height / vspace);
         this.constraints = [];
         this.points = [];
@@ -145,7 +146,7 @@ class Cloth {
             for (let col=0; col<ncols; col+=1){
                 let y = row*vspace;
                 let x = col*hspace;
-                let p = new Point(x, y, 0, row==0, (vspace/31));
+                let p = new Point(x, y, 0, row==0, Math.pow((vspace/31), 2));
                 pps.push(p);
             }
             ps.push(pps);
