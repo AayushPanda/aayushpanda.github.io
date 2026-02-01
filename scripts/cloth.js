@@ -1,37 +1,53 @@
 class Point {
-    constructor (x, y, pinned) {
+    constructor (x, y, z, pinned, force_mult=1) {
         this.pinned = pinned
+        this.force_mult = force_mult;
         this.ax = 0;
         this.ay = 0;
+        this.az = 0;
         this.x = x;
         this.y = y;
+        this.z = z;
         this.px = x;
         this.py = y;
+        this.pz = z;
     }
 
     update(mousex, mousey, dt=0.1) {
         if (this.pinned) {
             return;
         }
-        this.ay += 5;   // gravity
+        this.ay += 3;   // gravity
         let dx = mousex - this.x;
         let dy = mousey - this.y;
-        let d = Math.max(Math.hypot(dx, dy), 0.5); // prevent division by 0
+        let dz = 50 - this.z;
+        let d = Math.max(Math.hypot(dx, dy, dz), 0.5); // prevent division by 0
+        
         if (d>20) {
             let g = 600;
             let fx =g*dx/(d*d);
             let fy = g*dy/(d*d);
+            let fz = g*dz/(d*d);
             this.ax += fx;
             this.ay +=fy;
+            this.az += fz;
         }
 
         let vx = this.x - this.px;
         let vy = this.y - this.py;
+        let vz = this.z - this.pz;
         this.px = this.x;
         this.py = this.y;
+        this.pz = this.z;
+
+        this.ax *= this.force_mult;
+        this.ay *= this.force_mult;
+        this.az *= this.force_mult;
+
         this.x += vx*0.99 + this.ax*dt*dt;
         this.y += vy*0.99 + this.ay*dt*dt;
-        this.ax = 0; this.ay = 0;
+        this.z += vz*0.99 + this.az*dt*dt;
+        this.ax = 0; this.ay = 0; this.az = 0;
     }
 }
 
@@ -52,7 +68,8 @@ class Constraint{
 
         let dx = this.p1.x - this.p2.x;
         let dy = this.p1.y - this.p2.y;
-        let d = Math.hypot(dx, dy);
+        let dz = this.p1.z - this.p2.z;
+        let d = Math.hypot(dx, dy, dz);
         if (d == 0) return;
         if (d >= this.max_d) {
             this.active = false;
@@ -78,11 +95,14 @@ class Constraint{
         let f = this.k * (d - this.L);
         let fx = f * dx;
         let fy = f * dy;
+        let fz = f * dz;
 
         this.p1.ax -= fx / 2;
         this.p1.ay -= fy / 2;
+        this.p1.az -= fz / 2;
         this.p2.ax += fx / 2;
         this.p2.ay += fy / 2;
+        this.p2.az += fz / 2;
     }
 
 
@@ -91,8 +111,11 @@ class Constraint{
             return;
         }
         // console.log(this.p1.x, this.p2.x);
-        // console.log(this.p2.x, this.p2.y);
-        ctx.strokeStyle = "white";
+        let c = Math.max(0, Math.min(255, (this.p1.z + this.p2.z) / 100 * 255
+        ));
+
+        ctx.strokeStyle = `rgb(${c}, ${c}, ${c})`;
+
         ctx.lineWidth = 0.1;
         ctx.beginPath();
         ctx.moveTo(this.p1.x, this.p1.y);
@@ -108,6 +131,8 @@ class Cloth {
         this.canvas = canvas
         const hspace = width/ncols;
         const vspace = hspace;
+        console.log(vspace);
+        let k = 0.005;
         let nrows = Math.floor(height / vspace);
         this.constraints = [];
         this.points = [];
@@ -120,7 +145,7 @@ class Cloth {
             for (let col=0; col<ncols; col+=1){
                 let y = row*vspace;
                 let x = col*hspace;
-                let p = new Point(x,y, row==0);
+                let p = new Point(x, y, 0, row==0, (vspace/31));
                 pps.push(p);
             }
             ps.push(pps);
@@ -129,16 +154,22 @@ class Cloth {
         for (let row=0; row<nrows; row+=1){
             for (let col=0; col<ncols; col+=1){
                 if (row < nrows - 1) {
-                    this.constraints.push(new Constraint(ps[row][col], ps[row+1][col], vspace));
+                    this.constraints.push(new Constraint(ps[row][col], ps[row+1][col], vspace, k));
                 }
                 if (col < ncols - 1) {
-                    this.constraints.push(new Constraint(ps[row][col], ps[row][col+1], vspace));
+                    this.constraints.push(new Constraint(ps[row][col], ps[row][col+1], vspace, k));
+                }
+                if (row < nrows - 2) {
+                    this.constraints.push(new Constraint(ps[row][col], ps[row+2][col], 2*vspace, k));
+                }
+                if (col < ncols - 2) {
+                    this.constraints.push(new Constraint(ps[row][col], ps[row][col+2], 2*vspace, k));
                 }
                 if (row < nrows - 1 && col < ncols - 1) {
-                    this.constraints.push(new Constraint(ps[row][col], ps[row+1][col+1], Math.sqrt(2)*vspace, Math.sqrt(2)*0.0003));
+                    this.constraints.push(new Constraint(ps[row][col], ps[row+1][col+1], Math.sqrt(2)*vspace, Math.sqrt(2)*k));
                 }
                 if (row > 0 && col < ncols - 1) {
-                    this.constraints.push(new Constraint(ps[row][col], ps[row-1][col+1], Math.sqrt(2)*vspace, Math.sqrt(2)*0.0003));
+                    this.constraints.push(new Constraint(ps[row][col], ps[row-1][col+1], Math.sqrt(2)*vspace, Math.sqrt(2)*k));
                 }
 
             }
@@ -155,8 +186,10 @@ class Cloth {
         ctx.beginPath();
         this.constraints.forEach(c => {
             if(c.active){
+
                 ctx.moveTo(c.p1.x, c.p1.y);
                 ctx.lineTo(c.p2.x, c.p2.y);
+
             }
         });
         ctx.stroke();
@@ -168,6 +201,18 @@ class Cloth {
             this.constraints.forEach(item => item.update_a(this.mousex, this.mousey, this.mouseclicked));
         }
         this.points.forEach(item => item.update(this.mousex, this.mousey));
+        let margin = 500;
+        let to_delete = new Set();
+        this.constraints.forEach(c => {
+            if (c.p1.x < -margin || c.p1.x > this.canvas.width + margin || c.p2.x < -margin || c.p2.x > this.canvas.width + margin || c.p1.y < -margin || c.p1.y > this.canvas.height + margin || c.p2.y < -margin || c.p2.y > this.canvas.height + margin) {
+                c.active = false;
+                to_delete.add(c.p1);
+                to_delete.add(c.p2);
+            }
+        })
+
+        this.points = this.points.filter(p => !to_delete.has(p));
+        this.constraints = this.constraints.filter(c => !(to_delete.has(c.p1) || to_delete.has(c.p2)));
         this.draw();
     }
 }
