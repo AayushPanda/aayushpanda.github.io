@@ -1,0 +1,39 @@
+  .writing-container {
+    max-width: 650px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    line-height: 1.8;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+  }
+
+  .content-list {
+    list-style: none;           /* remove default bullets */
+    padding: 0;
+    margin: 0;
+  }
+
+  .content-list li {
+    margin-bottom: 1.5rem;      /* space between items */
+    font-size: 1.1rem;
+  }
+
+  .content-list li a {
+    text-decoration: none;
+    color: #007acc;             /* link color */
+    transition: color 0.2s, transform 0.2s;
+  }
+
+  .content-list li a:hover {
+    color: #005f99;             /* darker on hover */
+    transform: translateX(4px); /* subtle movement */
+  }
+
+  .content-list li + li {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1.5rem;
+  }
