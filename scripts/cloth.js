@@ -182,7 +182,11 @@ class Cloth {
     draw(){
         const ctx = this.canvas.getContext("2d");
         ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        ctx.strokeStyle = "white";
+        const rootElement = document.documentElement;
+        const computedStyles = window.getComputedStyle(rootElement);
+        const primaryColor = computedStyles.getPropertyValue('--fg');
+
+        ctx.strokeStyle = primaryColor;
         ctx.lineWidth = 0.1;
         ctx.beginPath();
         this.constraints.forEach(c => {
