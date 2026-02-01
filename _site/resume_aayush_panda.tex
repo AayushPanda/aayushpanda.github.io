@@ -1,0 +1,171 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[scaled=0.92]{helvet}
+\usepackage{fontawesome} % Add this for the URL icon
+\renewcommand{\familydefault}{\sfdefault}
+
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{2in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+% Modified spacing for technical skills section
+\newcommand{\skillItem}[1]{\item\small{#1 \vspace{-1pt}}}
+% Modified resumeSubheading command with reduced spacing
+\newcommand{\resumeSubheading}[4]{\vspace{-3pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\ \textit{\small#3} & \textit{\small #4} \\
+\end{tabular*}\vspace{-9pt}}
+
+% Modified project heading to include URL logo and make title a link
+\newcommand{\resumeProjectHeading}[3]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small{\faLink} \small{\href{#3}{\underline{\textbf{#1}}}} \small{| \emph{#2}} \\
+\end{tabular*}\vspace{-7pt}}
+
+% Modified to add custom spacing between items
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.25in, itemsep=1pt, parsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+% New command for tighter spacing in skills section
+\newcommand{\skillListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=-3pt]}
+\newcommand{\skillListEnd}{\end{itemize}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Aayush Panda} \\ \vspace{1pt}
+    \small \href{mailto:aayush.vinayak@gmail.com}{aayush.vinayak@gmail.com} $|$
+    \href{https://linkedin.com/in/aayush-panda}{linkedin.com/in/aayush-panda} $|$
+    \href{https://github.com/AayushPanda}{github.com/AayushPanda}
+\end{center}
+
+\section{Technical Skills}
+\skillListStart
+    \skillItem{\textbf{Programming Languages:} C, C++, Rust, Python, Java, TypeScript, SQL, Haskell, Scheme, Bash, HTML/CSS, x86 assembly}
+%     \skillItem{\textbf{Web \& Mobile Development:} Next.js, React, Flutter, Android Development, Node.js, Express, Firebase}
+%     \skillItem{\textbf{Cloud \& DevOps:} Google Cl, and also evaluate Toma's impact on dealerships.}oud Platform (GCP), Docker, Git, GitHub Actions, Linux/Unix Environments}
+    \skillItem{\textbf{Machine Learning:} Transformers, RNNs, Diffusion models, VAEs, PyTorch, Numpy}
+    \skillItem{\textbf{Databases:} SQL dbs, Firestore, Neo4J, Chroma}
+\skillListEnd
+
+\section{Education}
+\resumeSubHeadingListStart
+    \resumeSubheading{University of Waterloo}{\textbf{GPA: } 3.92/4.00}{Bachelor of Computer Science, Honours Co-op}{Sep. 2024 -- Apr. 2028}
+%     \resumeItem{Relevant Coursework: Functional Programming, Algo Design and Data Abstraction, Data Structures and Data Management (All advanced)}
+\resumeSubHeadingListEnd
+\section{Experience}
+\resumeSubHeadingListStart
+
+    \resumeSubheading{ML \& NLP Engineering Intern}{Sep. 2025 -- Present}{Huawei Canada}{}
+    \resumeItemListStart
+        \resumeItem{Developed algorithms for KG generation from natural language documents, with approximate named entity linking}
+        \resumeItem{Developed document indexing for AI text editor that achieved SOTA performance for extremely large documents ($>100$ page)}
+        \resumeItem{Improved performance and reliability of Neo4j document indexing using Merkle trees. Reduced latency from 2s $\rightarrow$ ~100ms}
+        \resumeItem{Adapted a hybrid ASR model architecture to work with natural language context to guide transcription, reduced WER by $\mathbf{\sim 5\%}$}
+        \resumeItem{Developed AI assistant agent for HarmonyOS that allows for real-time voice and gesture interaction }
+    \resumeItemListEnd
+
+    \resumeSubheading{Laboratory Assistant}{Apr. 2025 -- Dec. 2025}{University of Waterloo Multi-Sensory Brain and Cognition Lab (MBC)}{}
+    \resumeItemListStart
+        \resumeItem{Research on how batsmen's eyes track baseballs, measuring visual perception bandwidth, and correlating with batting ability}
+        \resumeItem{Developed hybrid/synthetic data pipelines to train a \textbf{U-net} model to detect baseballs in captured video}
+        \resumeItem{Developed correspondence algorithm to synchronise data from high speed head mounted camera and eye tracking data}
+    \resumeItemListEnd
+
+    \resumeSubheading{Undergraduate Research Assistant}{Apr. 2025 -- Aug. 2025}{University of Waterloo Data Privacy Lab}{}
+    \resumeItemListStart
+        \resumeItem{Research on private record linkage protocols using locality sensitive hashing, supervised by Dr. Florian Kerschbaum}
+        \resumeItem{Developed a differentially private method of estimating max histogram bin size, used for a novel private set intersection method}
+        \resumeItem{Developed k-d cuckoo hashing algorithm that reduced expected-time complexity of private set intersection by a linear factor}
+    \resumeItemListEnd
+
+    \resumeSubheading{Software Engineering Intern}{Mar. 2025 -- Apr. 2025}{Toma (YC W25)}{}
+    \resumeItemListStart
+        \resumeItem{Wrote a service that evaluates dealership customer support quality using an in-house conversational voice AI. This data was then used to automatically shortlist and personalise pitches for ideal clients from over $\mathbf{\sim 20}$k dealerships in the US.}
+        \resumeItem{Worked on model evaluation for Toma's voice agents}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+\section{Projects}
+\resumeSubHeadingListStart
+
+    \resumeProjectHeading{Concord}{Rust, Vulkan, CUDA, HLSL}{https://github.com/concordic}
+    \resumeItemListStart
+        \resumeItem{Ongoing project to build a cross-platform runtime in Rust for accelerated computation, with a unified ISA and memory model for CPU/GPU operations.}
+        \resumeItem{Supports modular bytecode extensions enabling custom hardware backends}
+    \resumeItemListEnd
+
+    \resumeProjectHeading{Semantify}{Python, React, FastAPI, Sentence Transformers, UMAP, Ollama}{https://github.com/AayushPanda/semantify}
+    \resumeItemListStart
+        \resumeItem{Built a system that semantically organises \textbf{1000+ files} into a directory structure in seconds using embedding models and custom hierarchical clustering and subtree merging algorithms}
+        \resumeItem{Developed an interactive visualization of document embeddings to allow intuitive semantic exploration}
+        \resumeItem{Implemented a RAG-powered chat interface to intelligently query uploaded documents with source citation}
+    \resumeItemListEnd
+
+    \resumeProjectHeading{Phased Array SONAR}{C++, Python, Xtensa LX6 microprocessor, AVR RISC processors}{https://github.com/AayushPanda/phased-array-sonar}
+    \resumeItemListStart
+        \resumeItem{Engineered a sub-degree precision beam-steering phased SONAR array with real-time radar-style display on oscilloscopes.}
+        \resumeItem{Designed a waveguide to reduce inter-element pitch and suppress grating lobes, enhancing beam directivity.}
+        \resumeItem{Built a phased array simulator suite to visualize beamforming, steering, and focus behaviors in 2D.}
+    \resumeItemListEnd
+
+%     \resumeProjectHeading{Woodlands App}{Flutter, Firebase, Google Cloud Storage}{https://github.com/Woodlands-App-Team/WAPP}
+%     \resumeItemListStart
+%         \resumeItem{Developed a \textbf{Flutter} app to inform students about announcements, events, and cafeteria menu.}
+%         \resumeItem{Integrated \textbf{Firebase} and \textbf{Google Cloud Storage} for authentication and data storage.}
+%         \resumeItem{Achieved \textbf{400+} regular monthly users and rank \textbf{40} on the Apple App Store's top charts.}
+%     \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Patents}
+\skillListStart
+    \resumeItem{\textbf{CA 3222437:} Device for redirection of optical beams using virtual gratings generated by stationary waves.}
+    \resumeItem{\textbf{CA 3119717:} Compliant mechanism for operating flight control surfaces of a remotely piloted aircraft.}
+
+\skillListEnd
+
+\section{Awards}
+\skillListStart
+    \resumeItem{\textbf{University of Waterloo President's Research Award}}
+    \resumeItem{\textbf{Jane Street Estimathon @ UWaterloo (2024):} First place}
+    \resumeItem{\textbf{Hack the North 2022:} Winner (out of 829 participants)}
+    \resumeItem{\textbf{PicoCTF:} 2nd place in Canada, 14th (top 0.001\%) globally}
+\skillListEnd
+
+
+\end{document}

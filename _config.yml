@@ -1,0 +1,23 @@
+title: Aayush Panda
+description: Personal website of Aayush Panda
+url: "https://aayushpanda.github.io"
+baseurl: ""
+
+collections:
+  writings:
+    output: true
+    permalink: /writing/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "writings"
+    values:
+      layout: writing
+
+include:
+  - CNAME
+
+exclude:
+  - scripts/
+  - content/
