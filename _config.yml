@@ -18,6 +18,3 @@ defaults:
 include:
   - CNAME
 
-exclude:
-  - scripts/
-  - content/

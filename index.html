@@ -2,7 +2,9 @@
 layout: default
 title: Aayush Panda - Home
 ---
-<div class="content">
+<canvas id="cloth_canvas" style="width: 100vw;height: 100vh;z-index: 1;position: absolute;top: 0;left: 0;">
+</canvas>
+<div class="content" style="z-index: 0;">
     <h1 class="big-text">Hi, I'm Aayush!</h1>
     <p>
 I'm a CS Undergrad Student at The University of Waterloo. Sometimes I do stuff, sometimes they're cool.
@@ -14,3 +16,4 @@ I'm still making this thing, so feel free to tell me if stuff is broken!
 <!-- Here's my resume: <a href="/resume_aayush_panda.pdf">aayushpanda.github.io/resume</a> -->
     </p>
 </div>
+<script src="scripts/cloth.js"></script>
