@@ -2,7 +2,7 @@
 title: Murphy's Laws
 ---
 <td width="*">
-    <h3>Murphy's general laws</h3>
+    <h2>Murphy's general laws</h2>
     <ul>
       <li>Nothing is as easy as it looks.
       </li><li>Everything takes longer than you think.
@@ -19,7 +19,7 @@ title: Murphy's Laws
       </li><li>The Light at the end of the tunnel is only the light of an oncoming train.
     </li></ul>
     <hr style="margin-top: 15px; margin-bottom: 15px;">
-    <h3>Murphy's Military Laws</h3>
+    <h2>Murphy's Military Laws</h2>
     <ul>
         <li>If the enemy is in range, so are you.</li>
         <li>Incoming fire has the right of way.</li>
@@ -47,7 +47,7 @@ title: Murphy's Laws
         <li>Friendly Fire Isn't.</li>
     </ul>
     <hr style="margin-top: 15px; margin-bottom: 15px;">
-    <h3>Murphy's Laws of Enginering</h3>
+    <h2>Murphy's Laws of Enginering</h2>
     <ul>
         <li class="list">If it's worth doing, it's got to be done right now.</li>
         <li class="list">If it's not worth doing right now, it's not worth doing.</li>
@@ -63,7 +63,7 @@ title: Murphy's Laws
         <li class="list">The first place to look for information is in the section of the manual where you least expect to find it.</li>
     </ul>
     <hr style="margin-top: 15px; margin-bottom: 15px;">
-    <h3>Murphy's Laws of University</h3>
+    <h2>Murphy's Laws of University</h2>
     <ul>
         <li class="list">If you are given an open-book exam, you will forget your book.</li>
         <li class="list">Corollary: If you are given a take-home exam, you will forget where you live.</li>
