@@ -146,7 +146,7 @@ class Cloth {
             for (let col=0; col<ncols; col+=1){
                 let y = row*vspace;
                 let x = col*hspace;
-                let p = new Point(x, y, 0, row==0, Math.pow((vspace/31), 2));
+                let p = new Point(x, y, 0, row==0, Math.pow((vspace/31), 1));
                 pps.push(p);
             }
             ps.push(pps);
