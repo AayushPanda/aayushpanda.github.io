@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aayush Panda - Home</title>
-</head>
-<body>
-<script>0;</script>
-<div include="./navbar.html"></div>
-<div include="./content/home/home.html"></div>
-<div include="./footer.html"></div>
-<script src="scripts/injectHTML.js"></script>
-</body>
-</html>
+---
+layout: default
+title: Aayush Panda - Home
+---
+<canvas id="cloth_canvas" style="width: 100vw;height: 100vh;z-index: 1;position: absolute;top: 0;left: 0;">
+</canvas>
+<div class="content" style="z-index: 0;">
+    <h1 class="big-text">Hi, I'm Aayush!</h1>
+    <p>
+<br><br>
+I'm a CS Undergrad Student at The University of Waterloo. Sometimes I do stuff, sometimes it's cool.
+<br><br>
+My interests include (in no particular order, and among other things) flow-based models, differential privacy, mechinterp, RADAR, compilers, OS dev and aviation.
+<br><br>
+I am currently an ML/NLP Engineering intern at Huawei Canada. I have previously been in research roles involving CV and differential privacy at the University of Waterloo, and interned at the fastest growing automotive startup in YC. 
+<br><br>
+Please contact me if something is broken.
+<br><br>
+<!-- Here's my resume: <a href="/resume_aayush_panda.pdf">aayushpanda.github.io/resume</a> -->
+    </p>
+</div>
+<script src="scripts/cloth.js"></script>
