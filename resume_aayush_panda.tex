@@ -77,45 +77,51 @@
     \skillItem{\textbf{Programming Languages:} C, C++, Rust, Python, Java, TypeScript, SQL, Haskell, Scheme, Bash, HTML/CSS, x86 assembly}
 %     \skillItem{\textbf{Web \& Mobile Development:} Next.js, React, Flutter, Android Development, Node.js, Express, Firebase}
 %     \skillItem{\textbf{Cloud \& DevOps:} Google Cl, and also evaluate Toma's impact on dealerships.}oud Platform (GCP), Docker, Git, GitHub Actions, Linux/Unix Environments}
-    \skillItem{\textbf{Machine Learning:} Transformers, RNNs, Diffusion models, VAEs, PyTorch, Numpy}
+    \skillItem{\textbf{Machine Learning:} Transformers, RNNs, flow-matching, VAEs, PyTorch, Tensorflow, Sklearn, Numpy}
     \skillItem{\textbf{Databases:} SQL dbs, Firestore, Neo4J, Chroma}
 \skillListEnd
 
 \section{Education}
 \resumeSubHeadingListStart
-    \resumeSubheading{University of Waterloo}{\textbf{GPA: } 3.92/4.00}{Bachelor of Computer Science, Honours Co-op}{Sep. 2024 -- Apr. 2028}
+    \resumeSubheading{University of Waterloo}{\textbf{GPA: } 3.8/4.0}{Bachelor of Computer Science, Honours Co-op}{Sep. 2024 -- Apr. 2028}
 %     \resumeItem{Relevant Coursework: Functional Programming, Algo Design and Data Abstraction, Data Structures and Data Management (All advanced)}
 \resumeSubHeadingListEnd
 \section{Experience}
 \resumeSubHeadingListStart
 
-    \resumeSubheading{ML \& NLP Engineering Intern}{Sep. 2025 -- Present}{Huawei Canada}{}
+    \resumeSubheading{Software Engineering Intern}{Incoming Fall 2026}{AMD}{}
     \resumeItemListStart
-        \resumeItem{Developed algorithms for KG generation from natural language documents, with approximate named entity linking}
-        \resumeItem{Developed document indexing for AI text editor that achieved SOTA performance for extremely large documents ($>100$ page)}
-        \resumeItem{Improved performance and reliability of Neo4j document indexing using Merkle trees. Reduced latency from 2s $\rightarrow$ ~100ms}
-        \resumeItem{Adapted a hybrid ASR model architecture to work with natural language context to guide transcription, reduced WER by $\mathbf{\sim 5\%}$}
-        \resumeItem{Developed AI assistant agent for HarmonyOS that allows for real-time voice and gesture interaction }
+        \resumeItem{Kernel-mode graphics drivers and ML workload optimisation for AMD flagship GPUs}
     \resumeItemListEnd
 
-    \resumeSubheading{Laboratory Assistant}{Apr. 2025 -- Dec. 2025}{University of Waterloo Multi-Sensory Brain and Cognition Lab (MBC)}{}
+    \resumeSubheading{ML Engineering Intern}{Sep. 2025 -- Apr. 2026}{Huawei Canada}{}
+    \resumeItemListStart
+        \resumeItem{Developed agents and encoder-only models for voice/drawn gesture productivity software use (\textbf{10 million users)}}
+        \resumeItem{Improved performance of Neo4j knowledge graph updates using Merkle trees. Reduced latency by \textbf{95\%}}
+        \resumeItem{Developed text indexing algorithms for AI text editor with consistency guarantees ($\mathbf{F_1 =0.95}$ chunk retrieval for $100+$ pages)}
+        \resumeItem{Adapted a hybrid ASR model architecture to work with natural language context to guide transcription, reduced WER by $\mathbf{\sim 5\%}$}
+        \resumeItem{Developed iteratively self-improving coding agents, with outputs being preferred to production code in $\mathbf{90\%}$ of out-of-dist. tasks}
+    \resumeItemListEnd
+
+    \resumeSubheading{Undergraduate Researcher}{Apr. 2025 -- Aug. 2025}{University of Waterloo Multi-Sensory Brain and Cognition Lab (MBC)}{}
     \resumeItemListStart
         \resumeItem{Research on how batsmen's eyes track baseballs, measuring visual perception bandwidth, and correlating with batting ability}
-        \resumeItem{Developed hybrid/synthetic data pipelines to train a \textbf{U-net} model to detect baseballs in captured video}
+        \resumeItem{Developed hybrid/synthetic data pipelines to train a model to track baseballs in captured video with $\mathbf{97\%}$ success rate}
         \resumeItem{Developed correspondence algorithm to synchronise data from high speed head mounted camera and eye tracking data}
     \resumeItemListEnd
 
-    \resumeSubheading{Undergraduate Research Assistant}{Apr. 2025 -- Aug. 2025}{University of Waterloo Data Privacy Lab}{}
+    \resumeSubheading{Undergraduate Researcher}{Apr. 2025 -- Aug. 2025}{University of Waterloo Data Privacy Lab}{}
     \resumeItemListStart
         \resumeItem{Research on private record linkage protocols using locality sensitive hashing, supervised by Dr. Florian Kerschbaum}
-        \resumeItem{Developed a differentially private method of estimating max histogram bin size, used for a novel private set intersection method}
-        \resumeItem{Developed k-d cuckoo hashing algorithm that reduced expected-time complexity of private set intersection by a linear factor}
+        \resumeItem{Worked on alternatives to frequency-smoothing as in \underbar{\href{https://dl.acm.org/doi/10.14778/3626292.3626293}{Wei and Kerschbaum 2023}} offering $\mathbf{5-10x}$ speedup on testcases}
+        \resumeItem{Developed novel private set intersection algorithm using k-d cuckoo hashtables, reducing runtime from $\mathbf{O(n^2)}$ to $\mathbf{O(n)}$}
     \resumeItemListEnd
 
-    \resumeSubheading{Software Engineering Intern}{Mar. 2025 -- Apr. 2025}{Toma (YC W25)}{}
+    \resumeSubheading{Software Engineering Intern}{Mar. 2025 -- Apr. 2025}{Toma (A16Z, YC W25)}{}
     \resumeItemListStart
-        \resumeItem{Wrote a service that evaluates dealership customer support quality using an in-house conversational voice AI. This data was then used to automatically shortlist and personalise pitches for ideal clients from over $\mathbf{\sim 20}$k dealerships in the US.}
-        \resumeItem{Worked on model evaluation for Toma's voice agents}
+        \resumeItem{Architected an AI lead generation engine that helped scale Toma from \textbf{20 to 250+} customers, driving ARR from \textbf{\$500K to \$3M}}
+        \resumeItem{Reverse-engineered dealership booking platforms to build the first-ever dataset of all \textbf{25,000} North American car dealerships}
+        \resumeItem{Built a call orchestration system deploying \textbf{300,000} voice AI agents to collect data on all NA dealerships' phone service quality}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -126,22 +132,24 @@
 
     \resumeProjectHeading{Concord}{Rust, Vulkan, CUDA, HLSL}{https://github.com/concordic}
     \resumeItemListStart
-        \resumeItem{Ongoing project to build a cross-platform runtime in Rust for accelerated computation, with a unified ISA and memory model for CPU/GPU operations.}
-        \resumeItem{Supports modular bytecode extensions enabling custom hardware backends}
+        \resumeItem{Cross-platform runtime in Rust for accelerated computation, with a unified ISA and memory model for CPU/GPU operations.}
+        \resumeItem{Architected bytecode ISA and VM runtime with native cooperative multitasking and FFI}
+        \resumeItem{Developed modular compilation toolchain with inline bytecode support to allow for elegant native extensions }
+        \resumeItem{Created CLI interactive debugger with VM state inspection and variable watching}
     \resumeItemListEnd
-
-    \resumeProjectHeading{Semantify}{Python, React, FastAPI, Sentence Transformers, UMAP, Ollama}{https://github.com/AayushPanda/semantify}
-    \resumeItemListStart
-        \resumeItem{Built a system that semantically organises \textbf{1000+ files} into a directory structure in seconds using embedding models and custom hierarchical clustering and subtree merging algorithms}
-        \resumeItem{Developed an interactive visualization of document embeddings to allow intuitive semantic exploration}
-        \resumeItem{Implemented a RAG-powered chat interface to intelligently query uploaded documents with source citation}
-    \resumeItemListEnd
+%
+%     \resumeProjectHeading{Semantify}{Python, React, FastAPI, Sentence Transformers, UMAP, Ollama}{https://github.com/AayushPanda/semantify}
+%     \resumeItemListStart
+%         \resumeItem{Built a system that semantically organises files into a directory structure ($1000+$files$/s$) using embedding models and custom hierarchical clustering and subtree merging algorithms}
+%         \resumeItem{Developed an interactive visualization of document embeddings to allow intuitive semantic exploration}
+%         \resumeItem{Implemented a RAG-powered chat interface to intelligently query uploaded documents with source citation}
+%     \resumeItemListEnd
 
     \resumeProjectHeading{Phased Array SONAR}{C++, Python, Xtensa LX6 microprocessor, AVR RISC processors}{https://github.com/AayushPanda/phased-array-sonar}
     \resumeItemListStart
         \resumeItem{Engineered a sub-degree precision beam-steering phased SONAR array with real-time radar-style display on oscilloscopes.}
-        \resumeItem{Designed a waveguide to reduce inter-element pitch and suppress grating lobes, enhancing beam directivity.}
-        \resumeItem{Built a phased array simulator suite to visualize beamforming, steering, and focus behaviors in 2D.}
+        \resumeItem{Designed an acoustic waveguide to suppress grating lobes, enhancing beam directivity.}
+        \resumeItem{Built a phased array simulator suite to visualize beamforming, steering, and beam focussing behaviors in 2D.}
     \resumeItemListEnd
 
 %     \resumeProjectHeading{Woodlands App}{Flutter, Firebase, Google Cloud Storage}{https://github.com/Woodlands-App-Team/WAPP}
@@ -154,14 +162,17 @@
 
 \section{Patents}
 \skillListStart
-    \resumeItem{\textbf{CA 3222437:} Device for redirection of optical beams using virtual gratings generated by stationary waves.}
-    \resumeItem{\textbf{CA 3119717:} Compliant mechanism for operating flight control surfaces of a remotely piloted aircraft.}
+    \resumeItem{\textbf{CA 3222437:} Device for redirection of optical beams using virtual gratings generated by stationary waves.
+        }
+    \resumeItem{\textbf{CA 3119717:} Compliant mechanism for operating flight control surfaces of a remotely piloted aircraft.
+    }
 
 \skillListEnd
 
 \section{Awards}
 \skillListStart
     \resumeItem{\textbf{University of Waterloo President's Research Award}}
+\resumeItem{\textbf{University of Waterloo  President's Scholarship of Distinction}}
     \resumeItem{\textbf{Jane Street Estimathon @ UWaterloo (2024):} First place}
     \resumeItem{\textbf{Hack the North 2022:} Winner (out of 829 participants)}
     \resumeItem{\textbf{PicoCTF:} 2nd place in Canada, 14th (top 0.001\%) globally}
