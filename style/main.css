@@ -2,11 +2,11 @@
 
 :root {
     @media (prefers-color-scheme: dark) {
-        --fg: white;
-        --bg: black;
-        --hl: #2a82ea;
-        --shadow: #6c6b6b;
-        --dshadow: #1f1f1f;
+        --fg: black;
+        --bg: white;
+        --hl: #2063e0;
+        --shadow: #a4a4a4;
+        --dshadow: #d2d0d0;
     }
     @media (prefers-color-scheme: light) {
         --fg: black;
